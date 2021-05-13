@@ -1,0 +1,50 @@
+
+    <%- include('./partials/nav.ejs') %>
+    <%- include('./partials/banner.ejs') %>
+  <div class="container content" style="margin-top: 20px;">
+   
+    <% if(msg.length!=0){ %>
+        <p style="color: red;"> <%= msg[0] %> </p>
+    <% } %>
+    
+      <form action="/api/create" method="POST">
+            <div class="form-group">
+                  <label for="date">DATE</label>
+                  <input type="date" id="date" name="date" value="<%=data.date %>">
+                  <% if(msg.length!=0 && data.date==""){ %>
+                    <small  class="form-text text-muted" style="color: red !important;"> <%= errors.date%> </small>
+                    <% } %>
+            </div>
+            <div class="form-group">
+                    <label for="imp">IMPORTANT</label>
+                    <input type="text" class="form-control" id="imp" name="imp" value="<%=data.imp %>" >
+                    <% if(msg.length!=0 && data.imp==""){ %>
+                    <small  class="form-text text-muted" style="color: red !important;"> <%= errors.imp%> </small>
+                    <% } %>
+            </div>
+            <div id="todos" class="form-group">
+                    <div  class="form-group"> 
+                            <label for="todo0">TODO(S)</label>
+                            <input type="text" class="form-control" id="todo0" name="todos" value= <%= (todolen==1?data.todos:(todolen==0?'':data.todos[0])) %> >
+                           
+                    </div>
+                    <% for(let i=1;todolen>i;i++){ %>
+                      <div  class="form-group"> 
+                        <% const id_val ='todo'+i; %>
+                        <input type="text" class="form-control" name="todos" value= <%=  data.todos[i] %> id= <%= id_val %> >
+                      </div>
+                    <% } %>
+            </div>
+        
+        <div id="add_submit">
+              <button type="submit" class="btn btn-primary" id="create">Submit</button>
+              <button type="button" class="btn btn-danger" id="del">DEL TODO</button>
+              <button type="button" class="btn btn-success" id="add">ADD TODO</button>
+              
+        </div>
+      </form>
+      
+    </div> 
+    <%- include('./partials/footer.ejs') %> 
+    <script src="/create.js"></script>
+ 

@@ -1,0 +1,40 @@
+
+     <%- include('./partials/nav.ejs') %>
+     <%- include('./partials/banner.ejs') %>
+      <div class="container content" style="margin-top: 20px;">
+          <% if(present==1){%>
+            <p id="parent_delete_day"> date:<span class="curr_date"> <%= data.date %> </span><%=data.day %> <span ><button type="button" class="btn btn-danger" id="delete_day">delete</button> </span><p>
+            
+            <form>
+                
+                <div class="form-group">
+                  <label for="add_todo">TODO:</label>
+                  <input type="text" class="form-control" id="todoadder" placeholder="Add an item">
+                  <p id="err_info" ></p>
+                </div>
+                
+                <button type="button" class="btn btn-primary" id="add_item">Submit</button>
+              </form>
+
+              <p ><i>Important Event: </i><%=data.imp %> </p>
+            <h5>TODOS</h5>
+          <div class="card" style="width: 18rem;">
+            <ul id="todo_list" class="list-group list-group-flush">
+                <% for(let i=0;!(i>=data.todos.length);i++){ %>  
+                <li class="todo list-group-item"> <%= data.todos[i] %> </li>
+                <% } %>
+            </ul>
+          </div>
+           <% }else{ %> 
+           
+             <h1> <%=msg%> </h1>
+             <a href="/api/create" >Create todos for Today</a>
+             <br>
+             <a href="/api">View all</a>
+           
+            <%}%>
+      </div>
+      <%- include('./partials/footer.ejs') %>
+  
+    <script src="/day.js"></script>
+  

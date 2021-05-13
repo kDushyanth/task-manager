@@ -1,0 +1,26 @@
+
+      <%- include('./partials/nav.ejs') %>
+      <%- include('./partials/banner.ejs') %>
+      <div class="container content" style="margin-top: 20px;">
+            <p>
+                  
+                  This website contains the todos of a user for different days. 
+                  <br>
+                  <br>
+                  <i>/home:</i> contains a list of all days for which the user set todos.
+                  By selecting a particular day of the list gets the todos for that day.
+                  <br>
+                  <br>
+                  <i>/day:</i> by default, displays todos for today.
+                  If there are no todos for today, the user can create one.
+                  The form on this page could create a new todo and, selecting a particular todo from the list of todos will delete it.
+                  The Delete button deletes the specific day's todos.
+                  <br>
+                  <br>
+                  date format used: yyyy-mm-dd
+                  <br>
+                  <br>
+                  <i>/create:</i> can create a list of todos for a day. Users can enter the date, Important event of that day, and the todos for that day using the form.
+            </p>
+      </div>
+      <%- include('./partials/footer.ejs') %>

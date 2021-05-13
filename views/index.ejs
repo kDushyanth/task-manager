@@ -1,0 +1,25 @@
+<%- include('./partials/nav.ejs') %>
+<%- include('./partials/banner.ejs') %>
+<div class="container content" style="margin-top: 20px;">
+    
+    <div> 
+         <% for(var i=0;!(i>=info.length);i++){ %>
+            <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Day: <%= info[i].date %> </h5>
+                <h6 class="card-text">Important:  <%= info[i].imp %> <h6>
+                    <a href="/api/day/<%=info[i].date%>" class="card-link">Open</a>
+            </div>
+            </div>
+          <% } %>
+    </div>
+     
+    <div style="margin-top: 20px;">
+    <p>For more info <a href="/api/about">click here</a></p>
+    <p>To create Todos <a href="/api/create">click here</a></p>
+    <p>Todos for today <a href="/api/day/init">click here</a></p>
+    </div>
+</div>
+    <%- include('./partials/footer.ejs') %>
+    <script src="/index.js"></script>
+  
