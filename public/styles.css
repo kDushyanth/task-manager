@@ -1,0 +1,102 @@
+#delete_day {
+    position: absolute;
+    right: 0px;
+}
+
+#parent_delete_day {
+    position: relative;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+#add_submit {
+    position: float;
+    right: 0px;
+}
+
+#add,
+#del {
+    float: right;
+    margin: 0 5px;
+}
+
+.todo:hover {
+    cursor: pointer;
+    text-decoration: line-through;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.content {
+    padding-bottom: 12rem;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.card {
+    margin-bottom: 10px;
+    background-color: #ed9191;
+}
+
+a {
+    color: #00bc8c;
+}
+
+.card-link {
+    color: aliceblue;
+}
+
+.jumbotron {
+    background-color: #5b9cdc;
+    margin-bottom: 5rem;
+}
+
+.logout {
+    color: red;
+    padding-left: 0px !important;
+}
+
+.shadow {
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06) !important;
+}
+
+.main-content {
+    padding-bottom: 100px;
+}
+
+.about-banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 125px;
+    background-color: black;
+}
+
+.img-circle {
+    height: 150px;
+    border-radius: 150px;
+    border: 3px solid #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.social-links a {
+    transition: all 0.2s;
+}
+
+.social-links a img {
+    height: 30px;
+}
+
+.social-links a:hover {
+    transform: translateY(-3px);
+}
